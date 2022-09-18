@@ -72,11 +72,11 @@ useEffect(()=>{
     {!loading && <Loading></Loading>}
     {loading && <div>
       <HeroSliderComponent />
-      <div className='container mx-auto my-5 px-10 md:px-12 sm:px-10'>
+      <div className='container mx-auto my-5 px-2 md:px-12 sm:px-10'>
         <PosterSlider posters = {recomendedMovies} title = "Recomended Movies" subtitle = "Watch the Latest Reccomended movies" isDark = {false} />
       </div>
 
-      <div className='container mx-auto my-8 px-10 md:px-12 sm:px-10 '>
+      <div className='container mx-auto my-8 px-2 md:px-12 sm:px-10 '>
         <h1 className='font-bold lg:text-2xl text-lg mb-3 '>The Best of Entertainment Cards</h1>
           <EntertainmentSlider />
       </div>
@@ -89,15 +89,15 @@ useEffect(()=>{
         </div>
       
 
-      <div className='container  py-8 lg:py-0 lg:pb-5 mx-auto my-5 px-10 md:px-12 sm:px-10 '>
+      <div className='container  py-8 lg:py-0 lg:pb-5 mx-auto my-5 px-2 md:px-12 sm:px-10 '>
         <PosterSlider posters = {topRated} title = "Premieres" subtitle = "Brand New Releases Every Friday" isDark = {true} />
       </div>
       </div>
-      <div className='container pb-6 mx-auto my-5 px-10 md:px-12 sm:px-10'>
+      <div className='container pb-6 mx-auto my-5 px-2 md:px-12 sm:px-10'>
         <PosterSlider posters = {popular} title = "Popular Movies" subtitle = "Watch the latest popular movies" isDark = {false} />
       </div>
 
-      <div className='container pb-6 mx-auto my-5 px-10 md:px-12 sm:px-10'>
+      <div className='container pb-6 mx-auto my-5 px-2 md:px-12 sm:px-10'>
         <PosterSlider posters = {nowPlaying} title = "Now Playing Movies" subtitle = "Watch the latest playing movies" isDark = {false} />
       </div>
     </div>}

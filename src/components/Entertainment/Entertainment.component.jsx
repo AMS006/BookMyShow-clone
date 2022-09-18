@@ -44,8 +44,11 @@ const EntertainmentSlider =() =>{
             {
                 breakpoint: 480,
                 settings: {
-                    slidesToShow: 1,
+                    slidesToShow: 3,
+                    arrows:false,
                     slidesToScroll: 1,
+                    rows:2,
+                    
                 },
             },
         ],
