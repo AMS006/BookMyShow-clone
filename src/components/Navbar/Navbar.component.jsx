@@ -1,7 +1,7 @@
 import React from 'react'
 import { BiChevronDown, BiMenu, BiSearch } from 'react-icons/bi'
 import bookmyShow from './bookmyShow.png'
-function NavbarMd(props) {
+function NavbarLg(props) {
   return (
     <>
      <div className='  text-white container mx-auto flex justify-between' >
@@ -33,10 +33,11 @@ function NavbarMd(props) {
     </>
   )
 }
-function NavbarLg(){
+function NavbarMd(){
+    
     return (
        <>
-        <div className='text-white py-3 px-3 container flex justify-between items-center'>
+        <div className='text-white py-3 px-3 container mx-auto flex justify-between items-center'>
             <div className='left-part'>
                 <h3 className='text-bold text-2xl'>It All Starts Here!</h3>
                 <div className='flex items-center gap-1 text-sm'>
@@ -46,7 +47,7 @@ function NavbarLg(){
             </div>
             <div className='right-part flex items-center gap-3'>
                 <div>
-                    <button className='bg-red-500 py-1 px-2 rounded'>Use App</button>
+                    <button className='bg-red-500 py-1 px-2 rounded' onClick={() => window.location.href='https://play.google.com/store/apps/details?id=com.bt.bms&utm_source=bms_useapp&utm_medium=mweb&utm_campaign=installs'}>Use App</button>
                 </div>
                 <div className='text-3xl text-gray-400'>
                     <BiSearch/>
@@ -58,12 +59,12 @@ function NavbarLg(){
 }
 export default function Navbar(){
     return (
-        <div className='bg-slate-800'>
-           <div className='hidden md:block'>
-                <NavbarMd />
+        <div className='bg-premier-800'>
+           <div className='hidden lg:block'>
+                <NavbarLg />
            </div>
-           <div className='block md:hidden'>
-            <NavbarLg />
+           <div className='block lg:hidden'>
+            <NavbarMd />
            </div>
         </div>
         

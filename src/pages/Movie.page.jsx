@@ -2,13 +2,13 @@ import React, { useContext ,useEffect, useState} from 'react'
 import { useParams } from 'react-router-dom';
 import Slider from 'react-slick'
 import { MovieContext } from '../Context/Movie.context';
-import MovieLayout from '../layouts/Movie.layout';
 import axios from 'axios';
 import Cast from '../components/Cast/Cast.component';
 import PosterSlider from '../components/posterSlider/poster.slider.component';
 import MovieHero from '../components/MovieHero/MovieHero.component';
 import Loading from '../components/Loading/Loading.component';
 import {LoadingContext} from '../Context/Loading.context';
+import MainLayoutHoc from '../layouts/Main.layout';
 
 
 function MoviePage() {
@@ -18,15 +18,18 @@ function MoviePage() {
     const [crew,setCrew] = useState([]);
     const [similar,setSimilar] = useState([]);
     const [Recomended,setRecomended] = useState([]);
-    const {load,setLoad} = useContext(LoadingContext)
-
+    const {load,setLoad,setProgress,progress} = useContext(LoadingContext)
 
     useEffect(() => {
         setLoad(false);
+        setProgress(10);
         const getMovie = async () =>{
             const movie = await axios.get(`/movie/${id}`);
+            setProgress(50)
             setMovie(movie.data);
+            setProgress(70)
             setLoad(true);
+            setProgress(100)
         }
         getMovie();
         
@@ -63,7 +66,7 @@ function MoviePage() {
         
     }, [id])
 
-    console.log(cast)
+    console.log(progress)
     const castSettings = {
         arrows: true,
         slidesToShow: 5,
@@ -90,7 +93,7 @@ function MoviePage() {
             {
                 breakpoint: 480,
                 settings: {
-                    slidesToShow: 1,
+                    slidesToShow: 2,
                     slidesToScroll: 1,
                 },
             },
@@ -122,7 +125,8 @@ function MoviePage() {
             {
                 breakpoint: 480,
                 settings: {
-                    slidesToShow: 1,
+                    
+                    slidesToShow: 3,
                     slidesToScroll: 1,
                 },
             },
@@ -177,7 +181,7 @@ function MoviePage() {
                 ))}
             </Slider>
         </div>}
-           { crew.length!==0 && <div className='my-10 px-8 lg:px-0 '>
+           { crew.length!==0 && <div className='my-10 px-5 lg:px-0 '>
             <h1 className='my-5 text-2xl font-bold'>Crews</h1>
             {/* <div className='flex gap-4'> */}
             <Slider {...castSettings}>
@@ -186,11 +190,11 @@ function MoviePage() {
                 ))}
             </Slider>
         </div>}
-        {similar.length!==0 && <div className='my-6 px-8 lg:px-0'>
+        {similar.length!==0 && <div className='my-6 px-5 lg:px-0'>
             <PosterSlider posters = {similar} title = "You might also Like" subtitle = "" isDark = {false} movieSettings={movieSettings}></PosterSlider>
         </div>}
 
-        {Recomended.length !==0 && <div className='my-6 px-8 lg:px-0'>
+        {Recomended.length !==0 && <div className='my-6 px-5 lg:px-0'>
             <PosterSlider posters = {Recomended} title = "Recomended Movies" subtitle = "" isDark = {false} movieSettings={movieSettings}></PosterSlider>
         </div>}
     </div> 
@@ -199,4 +203,4 @@ function MoviePage() {
   )
 }
 
-export default MovieLayout(MoviePage);
+export default MainLayoutHoc(MoviePage);

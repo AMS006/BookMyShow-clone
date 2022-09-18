@@ -6,6 +6,8 @@ import MainLayoutHoc from '../layouts/Main.layout';
 import PosterSlider from '../components/posterSlider/poster.slider.component';
 import EntertainmentSlider from '../components/Entertainment/Entertainment.component';
 import Loading from '../components/Loading/Loading.component';
+import { useContext } from 'react';
+import { LoadingContext } from '../Context/Loading.context';
 
 
  function HomePage() {
@@ -14,9 +16,12 @@ import Loading from '../components/Loading/Loading.component';
   const [popular,setPopularMovies] = useState([]);
   const [nowPlaying,setNowPlayingMovie] = useState([]);
   const [loading,setLoading] = useState(false);
+
+  const {progress,setProgress} = useContext(LoadingContext);
   useEffect(()=>{
     setLoading(false);
-      const recomendedMovie = async() =>{
+    const recomendedMovie = async() =>{
+      
           const movie = await axios.get('/movie/popular');
           setRecomendedMovies(movie.data.results);
           setLoading(true);
@@ -46,19 +51,24 @@ useEffect(()=>{
 },[])
 useEffect(()=>{
   setLoading(false);
+  setProgress(10)
   const nowPlayingMovie = async() =>{
+      setProgress(20)
       const movie = await axios.get('/movie/now_playing');
+      setProgress(50)
       setNowPlayingMovie(movie.data.results);
+      setProgress(70)
       setLoading(true);
+      setProgress(100);
+      console.log(movie.data);
   }
   nowPlayingMovie();
 
 },[])
-
   // console.log(recomendedMovies);
-
   return (
     <>
+  
     {!loading && <Loading></Loading>}
     {loading && <div>
       <HeroSliderComponent />
