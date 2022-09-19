@@ -33,7 +33,7 @@ export default function PosterSlider(props) {
                 settings: {
                     arrows:false,
                     slidesToShow: 3,
-                    slidesToScroll: 1,
+                    slidesToScroll: 2,
                     arrows:false
 
                 },

@@ -57,7 +57,7 @@ function EventsPage() {
                 <PlayFilter></PlayFilter>
             </div>
             <div className='grid bg-white rounded  grid-cols-2 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-3 gap-3 px-2 lg:px-5  md:px-5 w-full  lg:w-4/5  '>
-            <h1 className='font-bold text-2xl my-4 col-span-2 lg:col-span-4 md:col-span-3 sm:col-span-3'>Events</h1>
+            <h1 className='font-bold text-2xl my-4 col-span-2 lg:col-span-4 md:col-span-3 sm:col-span-3'>Shows</h1>
                 {/* {loading && <Loading></Loading>} */}
                 {movie.map((each,index) =>(
                     // <div>

@@ -34,11 +34,12 @@ const EntertainmentSlider =() =>{
                 },
             },
             {
-                breakpoint: 600,
+                breakpoint: 650,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
                     initialSlide: 0,
+                    arrows:false
                 },
             },
             {

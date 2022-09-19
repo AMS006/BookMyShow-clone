@@ -31,7 +31,7 @@ function NavbarBtMd(){
                 <Link to ={'/stream'}>
                     <img src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:w-300:q-80/icd-stream-collection-202201201113.png" className='w-24' alt="Movies" />
                 </Link>
-                <Link to ={'/events'}>
+                <Link to ={'/shows'}>
                     <img src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:w-300:q-80/icd-music-shows-collection-202201201113.png" className='w-24' alt="Movies" />
                 </Link>
             </div>

@@ -88,6 +88,7 @@ function MoviePage() {
                     slidesToShow: 2,
                     slidesToScroll: 1,
                     initialSlide: 0,
+                    arrows:false
                 },
             },
             {
@@ -95,6 +96,7 @@ function MoviePage() {
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
+                    arrows:false,
                 },
             },
         ],
@@ -111,23 +113,22 @@ function MoviePage() {
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 2,
-                    infinite: true,
                 },
             },
             {
-                breakpoint: 600,
+                breakpoint: 650,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
-                    initialSlide: 0,
+                    arrows:false
                 },
             },
             {
                 breakpoint: 480,
                 settings: {
-                    
+                    arrows:false,
                     slidesToShow: 3,
-                    slidesToScroll: 1,
+                    slidesToScroll: 2,
                 },
             },
         ],
