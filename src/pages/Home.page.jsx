@@ -93,11 +93,11 @@ useEffect(()=>{
         <PosterSlider posters = {topRated} title = "Premieres" subtitle = "Brand New Releases Every Friday" isDark = {true} />
       </div>
       </div>
-      <div className='container pb-6 mx-auto my-5 px-2 md:px-12 sm:px-10'>
+      <div className='container mx-auto my-5 px-2 md:px-12 sm:px-10'>
         <PosterSlider posters = {popular} title = "Popular Movies" subtitle = "Watch the latest popular movies" isDark = {false} />
       </div>
 
-      <div className='container pb-6 mx-auto my-5 px-2 md:px-12 sm:px-10'>
+      <div className='container mx-auto my-5 px-2 md:px-12 sm:px-10'>
         <PosterSlider posters = {nowPlaying} title = "Now Playing Movies" subtitle = "Watch the latest playing movies" isDark = {false} />
       </div>
     </div>}

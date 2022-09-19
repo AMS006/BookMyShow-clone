@@ -8,7 +8,7 @@ export default function PosterSlider(props) {
         speed: 500,
         slidesToScroll: 5,
         infinite:false,
-        initialSlide: 0,
+        // initialSlide: 0,
 
         responsive: [
             {
@@ -20,11 +20,12 @@ export default function PosterSlider(props) {
                 },
             },
             {
-                breakpoint: 600,
+                breakpoint: 650,
                 settings: {
                     slidesToShow: 2,
                     slidesToScroll: 1,
-                    initialSlide: 2,
+                    arrows:false,
+                    // initialSlide: 0,
                 },
             },
             {
@@ -33,8 +34,7 @@ export default function PosterSlider(props) {
                     arrows:false,
                     slidesToShow: 3,
                     slidesToScroll: 1,
-                    arrows:false,
-                    initialSlide: 2,
+                    arrows:false
 
                 },
             },

@@ -7,6 +7,8 @@ import Loading from '../components/Loading/Loading.component';
 import Poster from '../components/posters/poster.component';
 import { useContext } from 'react';
 import { LoadingContext } from '../Context/Loading.context';
+import PlayFilter from '../components/Filters/PlayFilter';
+import HeroSliderComponent from '../components/HeroSlider/HeroSlider.component';
 function MoviesMainPage() {
     const [pageNo,setPage] = useState(5);
     // const [loading,setLoading] = (false);
@@ -41,19 +43,20 @@ function MoviesMainPage() {
             setTotolResults(parsedData.totalResults);
     }
   return(
-    <>
+    <div className='bg-slate-100 '>
+        <HeroSliderComponent></HeroSliderComponent>
         <InfiniteScroll
             dataLength={movie.length}
             next={fetchMoreData}
             hasMore={movie.length !==totalResults}
             loader={<Loading />}
         >
-        <div className='lg:flex px-3   md:px-10 lg:px-10 mt-5'>
+        <div className='lg:flex px-3  gap-3  md:px-10 lg:px-10 mt-5'>
             <div className=' w-full lg:w-1/5 mb-4 h-full'>
-                <h1>Filters</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa est assumenda itaque dolore in perspiciatis iste delectus iusto expedita molestias.</p>
+                <h1 className='font-bold text-xl py-3'>Filters</h1>
+                <PlayFilter></PlayFilter>
             </div>
-            <div className='grid grid-cols-2 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-3 gap-3 px-2 lg:px-5  md:px-5 w-full  lg:w-4/5  '>
+            <div className='grid bg-white rounded  grid-cols-2 lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-3 gap-3 px-2 lg:px-5  md:px-5 w-full  lg:w-4/5  '>
             <h1 className='font-bold text-2xl my-4 col-span-2 lg:col-span-4 md:col-span-3 sm:col-span-3'>Movies</h1>
                 {/* {loading && <Loading></Loading>} */}
                 {movie.map((each,index) =>(
@@ -64,7 +67,7 @@ function MoviesMainPage() {
             </div>
         </div>
         </InfiniteScroll>
-    </>
+    </div>
   )
 }
 

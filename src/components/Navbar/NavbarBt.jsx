@@ -1,5 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import homeLogo from './homeLogo.png'
 function NavbarBtLg(){
     return(
         <>
@@ -18,7 +19,8 @@ function NavbarBtMd(){
         <>
             <div className='flex gap-3'>
             <Link to ={'/'}>
-                    <img src="https://cdn.onlinewebfonts.com/svg/img_172094.png" className='w-16' alt="Movies" />
+                    <img src={homeLogo} className='w-8 mt-1' alt="Movies" />
+                    <h3 className='text-sm mt-2'>Home</h3>
                 </Link>
                 <Link to ={'/movies'}>
                     <img src="https://assets-in.bmscdn.com/discovery-catalog/collections/tr:w-800,h-800:w-300:q-80/icd-movies-collection-202201201113.png" className='w-24' alt="Movies" />
