@@ -23,7 +23,7 @@ export default function PosterSlider(props) {
                 breakpoint: 650,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 1,
+                    swipeToSlide:true,
                     arrows:false,
                     // initialSlide: 0,
                 },
@@ -33,8 +33,8 @@ export default function PosterSlider(props) {
                 settings: {
                     arrows:false,
                     slidesToShow: 3,
-                    slidesToScroll: 2,
-                    arrows:false
+                    arrows:false,
+                    swipeToSlide:true
 
                 },
             },
