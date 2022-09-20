@@ -16,28 +16,17 @@ export default function PosterSlider(props) {
                 settings: {
                     slidesToShow: 3,
                     slidesToScroll: 2,
-                    infinite: true,
                 },
             },
             {
                 breakpoint: 650,
                 settings: {
-                    slidesToShow: 2,
-                    swipeToSlide:true,
-                    arrows:false,
-                    // initialSlide: 0,
-                },
-            },
-            {
-                breakpoint: 480,
-                settings: {
-                    arrows:false,
                     slidesToShow: 3,
-                    arrows:false,
-                    swipeToSlide:true
-
+                    slidesToScroll:2,
+                    arrows:false
                 },
             },
+            
         ],
       
     }
