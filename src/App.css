@@ -1,4 +1,30 @@
-.slick-arrow:before{
+.slick-arrow:after{
   color: red !important;
   font-size: 25px !important;
+}
+.swiper-slide{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.swiper-button-prev,.swiper-button-next{
+
+  background: #574949;
+  color: white !important;
+  padding: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.swiper-button-prev::after,.swiper-button-next::after{
+  font-size: 25px !important;
+}
+@media only screen and (max-width: 639px) {
+  .swiper-button-prev{
+    display: none !important;
+  }
+  .swiper-button-next{
+    display: none !important;
+  }
 }

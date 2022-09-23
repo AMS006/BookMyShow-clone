@@ -6,13 +6,15 @@ import axios from 'axios';
 import {Routes,Route} from 'react-router-dom';
 import MoviePage from './pages/Movie.page';
 import LoadingBar from 'react-top-loading-bar'
-
+import "swiper/css";
+import "swiper/css/navigation";
 import { useContext } from 'react';
 import { LoadingContext } from './Context/Loading.context';
 import MoviesMainPage from './pages/Movies.main.page';
 import PlaysPage from './pages/Plays.page';
 import StreamPage from './pages/Stream.page';
 import EventsPage from './pages/Events.page';
+import SliderPage from './pages/SliderPage';
 function App() {
   axios.defaults.baseURL = "https://api.themoviedb.org/3"
   axios.defaults.params = {}
@@ -33,8 +35,8 @@ function App() {
       <Route path = '/plays' element={<PlaysPage></PlaysPage>}></Route>
       <Route path = '/stream' element={<StreamPage></StreamPage>}></Route>
       <Route path = '/shows' element={<EventsPage></EventsPage>}></Route>
-
-    </Routes>
+      <Route path = '/slide' element={<SliderPage></SliderPage>}></Route>
+    </ Routes>
     </>
   );
 }

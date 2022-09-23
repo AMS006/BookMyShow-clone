@@ -76,7 +76,7 @@ useEffect(()=>{
         <PosterSlider posters = {recomendedMovies} title = "Recomended Movies" subtitle = "Watch the Latest Reccomended movies" isDark = {false} />
       </div>
 
-      <div className='container mx-auto my-8 px-2 md:px-12 sm:px-10 '>
+      <div className='container mx-auto  my-8 px-2 md:px-12 sm:px-10 '>
         <h1 className='font-bold lg:text-2xl text-lg mb-3 '>The Best of Entertainment Cards</h1>
           <EntertainmentSlider />
       </div>
