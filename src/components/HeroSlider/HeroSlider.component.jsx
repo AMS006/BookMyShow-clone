@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import HeroSlider from "react-slick";
 import { NextArrow, PrevArrow } from "./Arrows.Component";
-
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation ,Grid} from 'swiper';
+import "swiper/css";
+import "swiper/css/navigation";
+import SwiperCore, { Autoplay } from 'swiper';
 export default function HeroSliderComponent() {
-
+  SwiperCore.use([Autoplay])
     const [images, setimages] = useState([
         "/2RSirqZG949GuRwN38MYCIGG4Od.jpg",
         "/ugS5FVfCI3RV0ZwZtBV3HAV75OX.jpg",
@@ -40,22 +44,21 @@ export default function HeroSliderComponent() {
 
   return (
     <>
-      <div className="lg:hidden">
-        <HeroSlider {...settings}>
+      <div className="">
+      <Swiper
+        slidesPerView={1}
+        navigation={true}
+        centeredSlides={true}
+        modules={[Navigation]}
+        spaceBetween={20}
+        loop={true}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+        >
           {images.map((images,index) => (
-            <div className="w-full h-56 md:h-80 py-3" key={index}>
-              <img
-                src={`https://image.tmdb.org/t/p/original${images}`}
-                alt="Hero Banner"
-                className="w-full h-full rounded-md object-cover"
-              />
-            </div>
-          ))}
-        </HeroSlider>
-      </div>
-      <div className="hidden lg:block">
-        <HeroSlider {...settingsLG}>
-          {images.map((images,index) => (
+            <SwiperSlide>
             <div className="w-full h-96 px-2 py-3" key={index}>
               <img
                 src={`https://image.tmdb.org/t/p/original${images}`}
@@ -63,8 +66,9 @@ export default function HeroSliderComponent() {
                 className="w-full h-full rounded-md object-cover"
               />
             </div>
+            </SwiperSlide>
           ))}
-        </HeroSlider>
+        </Swiper>
       </div>
     </>
   );

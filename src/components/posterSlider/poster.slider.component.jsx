@@ -6,6 +6,8 @@ import { Navigation,Pagination } from 'swiper';
 import "swiper/css";
 import "swiper/css/navigation";
 export default function PosterSlider(props) {
+    const view = props.moviePage === true ? 4 : 5;
+    console.log(view);
     const settings = {
         arrows: true,
         slidesToShow: 5,
@@ -43,7 +45,7 @@ export default function PosterSlider(props) {
             {props.posters.map((each,index) =>( <Poster {...each} isDark={props.isDark} key={index}></Poster>))}
         </Slider> */}
         <Swiper 
-        slidesPerView={3} 
+        slidesPerView={3}
         navigation={true} 
         spaceBetween={10}
         modules={[Navigation]}
@@ -60,10 +62,11 @@ export default function PosterSlider(props) {
               modules:[Navigation]
             },
             1024: {
-              slidesPerView: 5,
+              slidesPerView: view,
               spaceBetween: 20,
               slidesPerGroup:5,
-              modules:[Navigation]
+              modules:[Navigation],
+              speed:1500
             },
           }}
         >

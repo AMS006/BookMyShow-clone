@@ -9,8 +9,10 @@ import MovieHero from '../components/MovieHero/MovieHero.component';
 import Loading from '../components/Loading/Loading.component';
 import {LoadingContext} from '../Context/Loading.context';
 import MainLayoutHoc from '../layouts/Main.layout';
-
-
+import {Swiper,SwiperSlide} from 'swiper/react';
+import { Navigation} from 'swiper';
+import "swiper/css";
+import "swiper/css/navigation";
 function MoviePage() {
     const {id} = useParams();
     const {movie,setMovie} = useContext(MovieContext);
@@ -138,7 +140,7 @@ function MoviePage() {
     {!load && <Loading></Loading>}
     {load && <div>
         <MovieHero></MovieHero>
-   <div className='contianer w-full lg:w-2/3 lg:ml-10 px-3'>
+    <div className='contianer w-full lg:w-2/3 lg:ml-10 px-3'>
         <div className='my-8'>
             <h2 className='font-bold text-2xl mb-3'>About the Movie</h2>
             <p className='text-justify '>{movie.overview}</p>
@@ -173,30 +175,68 @@ function MoviePage() {
 
         <hr />
 
-        {cast.length!==0 && <div className='my-10 px-8 lg:px-0 '>
+        {cast.length!==0 && <div className='my-10 '>
             <h1 className='my-5 text-2xl font-bold'>Cast</h1>
             {/* <div className='flex gap-4'> */}
-            <Slider {...castSettings}>
+            <Swiper 
+                slidesPerView={2}
+                spaceBetween={20}  
+                modules={[Navigation]}
+                navigation={true}
+                slidesPerGroup={2}
+                breakpoints={{
+                 
+                 668: {
+                   slidesPerView: 3,
+                   spaceBetween: 30,
+                   slidesPerGroup:3,
+                 },
+                 1024: {
+                   slidesPerView: 4,
+                   spaceBetween: 20,
+                   slidesPerGroup:4,
+                 },
+               }}
+            >
                 {cast.map((each) =>(
-                    each.profile_path && <Cast img={each.profile_path} name={each.name} profile={each.character} / > 
+                    each.profile_path &&(<SwiperSlide> <Cast img={each.profile_path} name={each.name} profile={each.character} / > </SwiperSlide>)
                 ))}
-            </Slider>
+            </Swiper>
         </div>}
-           { crew.length!==0 && <div className='my-10 px-5 lg:px-0 '>
+           { crew.length!==0 && <div className='my-10   '>
             <h1 className='my-5 text-2xl font-bold'>Crews</h1>
             {/* <div className='flex gap-4'> */}
-            <Slider {...castSettings}>
+            <Swiper 
+                slidesPerView={2}
+                spaceBetween={20}  
+                modules={[Navigation]}
+                navigation={true}
+                slidesPerGroup={2}
+                breakpoints={{
+                 
+                 668: {
+                   slidesPerView: 3,
+                   spaceBetween: 30,
+                   slidesPerGroup:3,
+                 },
+                 1024: {
+                   slidesPerView: 4,
+                   spaceBetween: 20,
+                   slidesPerGroup:4,
+                 },
+               }}
+            >
                 {crew.map((each) =>(
-                    each.profile_path && <Cast img={each.profile_path} name={each.name} profile={each.character} / > 
+                    each.profile_path &&(<SwiperSlide> <Cast img={each.profile_path} name={each.name} profile={each.character} / > </SwiperSlide>)
                 ))}
-            </Slider>
+            </Swiper>
         </div>}
-        {similar.length!==0 && <div className='my-6 px-5 lg:px-0'>
-            <PosterSlider posters = {similar} title = "You might also Like" subtitle = "" isDark = {false} movieSettings={movieSettings}></PosterSlider>
+        {similar.length!==0 && <div className='my-6 '>
+            <PosterSlider posters = {similar} title = "You might also Like" subtitle = "" isDark = {false} moviePage={true}></PosterSlider>
         </div>}
 
-        {Recomended.length !==0 && <div className='my-6 px-5 lg:px-0'>
-            <PosterSlider posters = {Recomended} title = "Recomended Movies" subtitle = "" isDark = {false} movieSettings={movieSettings}></PosterSlider>
+        {Recomended.length !==0 && <div className='my-6 '>
+            <PosterSlider posters = {Recomended} title = "Recomended Movies" subtitle = "" isDark = {false} moviePage={true}></PosterSlider>
         </div>}
     </div> 
     </div>}

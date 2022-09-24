@@ -26,6 +26,7 @@ const EntertainmentSlider =() =>{
         speed: 500,
         slideToScroll: 1,
         infinite:false,
+
         responsive: [
             {
                 breakpoint: 1024,
@@ -66,22 +67,28 @@ const EntertainmentSlider =() =>{
         </Slider> */}
        <Swiper 
        slidesPerView={3}
-      
+       slidesPerGroup={3}
        spaceBetween={20}  
        modules={[Navigation]}
        navigation={true}
+       
        breakpoints={{
         640: {
           slidesPerView: 2,
           spaceBetween: 30,
+          slidesPerGroup:2
         },
         768: {
           slidesPerView: 3,
           spaceBetween: 30,
+          slidesPerGroup:3,
+          speed:1000
         },
         1024: {
           slidesPerView: 4,
           spaceBetween: 20,
+          slidesPerGroup:4,
+          speed:1500
         },
       }}
         // navigation={false} 
