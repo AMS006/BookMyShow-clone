@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+# Book-My-Show Clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Book-My-Show Clone is a basic clone Application that is build using the React and MovieDB API
 
-## Available Scripts
+## Live Website
 
-In the project directory, you can run:
+- [BookMyShow-Clone](https://book-my-show-clone-mu.vercel.app/)
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Tech Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**Client:** React, TailwindCSS
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+**Deployment:** Vercel
 
-### `npm run build`
+## Installation Guide
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+To Run Book-My-Show Clone project on local system follow the simple steps:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Step-1
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+clone this project on your local system
 
-### `npm run eject`
+```bash
+  git clone https://github.com/AMS006/BookMyShow-clone
+  cd BookMyShow-clone
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Step-2 Installing Dependency
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Installing Dependency
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+  cd BookMyShow-clone
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+To Install Dependency
 
-## Learn More
+```bash
+  npm i
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Step-3 Adding Environment Variables
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To run this project, you will need to add the following environment variables to your .env file
 
-### Code Splitting
+### Environment Variable
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+`REACT_APP_MOVIE_KEY`
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Step-4 Start the Application on local machine
 
-### Making a Progressive Web App
+#### To Start the Application:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```bash
+  npm start
+```
 
-### Advanced Configuration
+after ruunning this command, It will start after some time.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+after starting  you can access application on the browser.
