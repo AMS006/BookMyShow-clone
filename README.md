@@ -1,5 +1,7 @@
 # Book-My-Show Clone
 
+![HomePage](https://res.cloudinary.com/dkgoet9em/image/upload/v1682946961/TiffinManagment/BookMyShow_zupmrs.png)
+
 Book-My-Show Clone is a basic clone Application that is build using the React and MovieDB API
 
 ## Live Website
